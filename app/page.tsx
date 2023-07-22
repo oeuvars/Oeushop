@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { client } from "@/sanity/lib/client"
 import { groq } from "next-sanity"
 
@@ -8,6 +9,8 @@ import { cn } from "@/lib/utils"
 import { ProductFilters } from "@/components/product-filters"
 import { ProductGrid } from "@/components/product-grid"
 import { ProductSort } from "@/components/product-sort"
+
+import siteLogo from "../public/siteLogo.svg"
 
 interface Props {
   searchParams: {
@@ -22,12 +25,8 @@ interface Props {
 
 export default async function Page({ searchParams }: Props) {
   const { date, price, color, category, size, search } = searchParams
-  const priceOrder = price
-    ? `| order(price ${price})`
-    : ""
-  const dateOrder = date
-    ? `| order(_createdAt ${date})`
-    : ""
+  const priceOrder = price ? `| order(price ${price})` : ""
+  const dateOrder = date ? `| order(_createdAt ${date})` : ""
   const order = `${priceOrder}${dateOrder}`
 
   const productFilter = `_type == "product"`
@@ -38,7 +37,7 @@ export default async function Page({ searchParams }: Props) {
   const filter = `*[${productFilter}${colorFilter}${categoryFilter}${sizeFilter}${searchFilter}]`
 
   const products = await client.fetch<SanityProduct[]>(
-    groq `${filter} ${order} {
+    groq`${filter} ${order} {
       _id,
       _createdAt,
       name,
@@ -54,9 +53,7 @@ export default async function Page({ searchParams }: Props) {
   return (
     <div>
       <div className="px-4 pt-20 text-center">
-        <h1 className="text-4xl font-extrabold tracking-normal">
-          {siteConfig.name}
-        </h1>
+        <Image src={siteLogo} height={225} width={200} alt="logo" className="h-12 w-52 flex mx-auto" />
         <p className="mx-auto mt-4 max-w-3xl text-base">
           {siteConfig.description}
         </p>

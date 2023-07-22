@@ -37,8 +37,8 @@ export function ProductGrid({ products }: Props) {
               blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(225,280))}`}
               src={urlForImage(product.images[0]).url()}
               alt={product.name}
-              width={225}
-              height={280}
+              width={1080}
+              height={1344}
               className="h-full w-full object-cover object-center"
             />
           </div>

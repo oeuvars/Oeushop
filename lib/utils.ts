@@ -7,17 +7,17 @@ export function cn(...inputs: ClassValue[]) {
 
 export function getSizeName(value: string) {
   switch (value) {
-    case "xs":
-      return "X-Small"
-    case "s":
-      return "Small"
-    case "m":
-      return "Medium"
-    case "l":
-      return "Large"
-    case "xl":
-      return "X-Large"
-    case "one-size":
-      return "One Size"
+    case "A2":
+      return "A2"
+    case "A3":
+      return "A3"
+    case "A4":
+      return "A4"
+    case "A5":
+      return "A5"
+    case "B4":
+      return "B4"
+    case "B5":
+      return "B5"
   }
 }

@@ -45,7 +45,7 @@ export function CartSummary() {
             <span>Shipping estimate</span>
           </dt>
           <dd className="text-sm font-medium">
-            {formatCurrencyString({ value: shippingAmount, currency: "USD"})}</dd>
+            {formatCurrencyString({ value: shippingAmount, currency: "INR"})}</dd>
         </div>
         <div className="flex items-center justify-between border-t border-gray-200 pt-4 dark:border-gray-600">
           <dt className="text-base font-medium">Order total</dt>
