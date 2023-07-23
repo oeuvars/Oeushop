@@ -15,11 +15,11 @@ export async function POST(request: Request) {
     payment_method_types: ["card"],
     line_items: lineItems,
     shipping_address_collection: {
-      allowed_countries: ["US"],
+      allowed_countries: ["IN"],
     },
     shipping_options: [
       {
-        shipping_rate: "shr_1NWcMDSGsNlpsl2Kg8Ejyzdx",
+        shipping_rate: "shr_1NWqFISGsNlpsl2KE56hvTDp",
       },
     ],
     billing_address_collection: "auto",
