@@ -14,7 +14,6 @@ export async function seedSanityData() {
       price: item.price,
       sku: item.sku,
       sizes: item.sizes,
-      colors: item.colors,
       categories: item.categories,
     }
     transaction.createOrReplace(product)
