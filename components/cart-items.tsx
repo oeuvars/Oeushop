@@ -62,10 +62,6 @@ export function CartItems() {
                   </h3>
                 </div>
                 <p className="mt-1 text-sm font-medium">{formatCurrencyString({ value: product.price, currency: product.currency})}</p>
-                <p className="mt-1 text-sm font-medium">
-                  Size: {/* @ts-ignore */}
-                  <strong>{getSizeName(product.price_data?.size)}</strong>
-                </p>
               </div>
 
               <div className="mt-4 sm:mt-0 sm:pr-9">
